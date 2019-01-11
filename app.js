@@ -30,9 +30,7 @@ app.get('/api/genres/:id', (req, res) => {
  
 app.post('/api/genres', (req, res) => {
   
-  const schema = { name: Joi.string().min(3).required() };
-
-  const { error } = Joi.validate(req.body, schema);
+  const { error } = validateGenre (req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   const genre = {
@@ -43,6 +41,13 @@ app.post('/api/genres', (req, res) => {
   genres.push(genre);
   res.status(201).send(genre);
 });
+
+function validateGenre(genre) {
+  
+  const schema = { name: Joi.string().min(3).required() };
+
+  return Joi.validate(genre, schema);
+}
 
 const port = process.env.PORT || 3003;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
