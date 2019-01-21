@@ -8,13 +8,14 @@
   },
   "keywords": [],
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "https://github.com/jturello/node_express_mongo_demo_vidly.git"
   },
   "author": "James Turello",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "helmet": "^3.15.0",
     "joi": "^14.3.1"
   }
 }

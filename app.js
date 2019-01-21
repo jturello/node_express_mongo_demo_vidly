@@ -1,9 +1,10 @@
-const Joi = require('joi');
 const express  = require('express');
 const app = express();
 const genres = require('./routes/genres');
 const home = require('./routes/home');
+const helmet = require('helmet');
 
+app.use(helmet());
 app.use(express.json());
 app.use('/api/genres', genres);
 app.use('/', home);
