@@ -6,6 +6,8 @@ const helmet = require('helmet');
 
 app.use(helmet());
 app.use(express.json());
+app.use(express.urlencoded( { extended: true } ));
+
 app.use('/api/genres', genres);
 app.use('/', home);
 

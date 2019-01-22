@@ -1,7 +1,6 @@
 const Joi = require('joi');
 const express = require('express');
 const router = express.Router();
-require('../app'); 
 
 const genres = [
   { "id": 1, "name": "Drama" },
