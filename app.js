@@ -1,11 +1,13 @@
 const express  = require('express');
 const app = express();
 const startupDebugger = require('debug')('app:startup');
+const config = require('config');
 const genres = require('./routes/genres');
 const home = require('./routes/home');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
+startupDebugger(config.get('name'));
 app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
 app.use(helmet());

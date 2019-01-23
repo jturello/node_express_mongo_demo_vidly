@@ -1,0 +1,7 @@
+{
+  "name": "Vidly Movie Rental App - Prod",
+  "db": {
+    "host": "prod-db-server"
+  }
+}
+
