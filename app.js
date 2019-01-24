@@ -20,6 +20,7 @@ app.set('views', './views'); // default
 
 app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
+app.use(express.static('public'));
 app.use(helmet());
 if (app.get('env') === 'development') {
   app.use(morgan('tiny'));
