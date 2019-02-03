@@ -12,8 +12,12 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 
 startupDebugger(config.get('name'));
-// line below throws an error if host env variable db_pwd is not set
-// dbDebugger('DB pwd: ' + config.get('db.pwd'));
+
+  if (config.has('db.pwd')) {
+    dbDebugger('DB pwd: ' + config.get('db.pwd'));
+  } else {
+    dbDebugger('environment variable db.pwd is not set');
+  }
 
 app.set('view engine', 'pug');
 app.set('views', './views'); // default
