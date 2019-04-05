@@ -26,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
 app.use(express.static('public'));
 app.use(helmet());
+
 if (app.get('env') === 'development') {
   app.use(morgan('tiny'));
   startupDebugger('Morgan Enabled...');
@@ -35,5 +36,4 @@ app.use('/', home);
 app.use('/about', about);
 app.use('/api/genres', genres);
 
-const port = process.env.PORT || 3003;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+module.exports = app;
