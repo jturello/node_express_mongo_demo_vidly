@@ -4,3 +4,4 @@
 [._]s[a-w][a-z]
  .env
 .git/*
+**/*example*
