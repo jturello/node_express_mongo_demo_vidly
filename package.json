@@ -4,7 +4,7 @@
   "description": "demo app for renting movies",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jasmine": "node_modules/jasmine/bin/jasmine.js"
   },
   "keywords": [],
   "repository": {
@@ -22,6 +22,8 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {
-    "morgan": "^1.9.1"
+    "jasmine": "^3.4.0",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0"
   }
 }
